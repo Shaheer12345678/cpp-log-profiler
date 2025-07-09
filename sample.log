@@ -1,1 +1,2 @@
-ERROR,auth,login,12
+ERROR,auth,login,12
+INFO,api,getUser,35

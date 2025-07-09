@@ -7,4 +7,14 @@
 #include "tokenize.hpp"
 #include "stats.hpp"
 #include "timer.hpp"
-
+
+using namespace std;
+using namespace logprof;
+
+static void usage() {
+    cerr << "Usage: logprof <file> [--delimiter ',' ] [--latency-col 3] [--top 5]\n";
+}
+
+int main(int argc, char** argv) {
+    string file;
+    char delim = ',';
