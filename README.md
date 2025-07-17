@@ -5,4 +5,8 @@ Command-line tool to parse large log files and compute stats:
 - Latency histogram (ms buckets)
 - Simple RAII scoped timer to profile hot paths
 
-## Build
+## Build
+```bash
+cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build -j
+./build/logprof --help

@@ -5,4 +5,7 @@ namespace logprof {
 
 void Histogram::add(long long latency_ms) {
     size_t idx = static_cast<size_t>(latency_ms < 0 ? 0 : latency_ms) / bucket_size;
-    buckets[idx]++;
+    buckets[idx]++;
+}
+
+std::vector<std::pair<size_t,size_t>> Histogram::sorted() const {

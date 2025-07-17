@@ -17,4 +17,14 @@ static void usage() {
 
 int main(int argc, char** argv) {
     string file;
-    char delim = ',';
+    char delim = ',';
+    int latency_col = 3;
+    int top = 5;
+
+    const option longopts[] = {
+        {"delimiter", required_argument, nullptr, 'd'},
+        {"latency-col", required_argument, nullptr, 'l'},
+        {"top", required_argument, nullptr, 't'},
+        {0,0,0,0}
+    };
+

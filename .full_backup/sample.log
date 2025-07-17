@@ -1,2 +1,3 @@
 ERROR,auth,login,12
-INFO,api,getUser,35
+INFO,api,getUser,35
+ERROR,auth,login,8

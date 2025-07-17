@@ -5,4 +5,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 option(ENABLE_TESTS "Enable unit tests" ON)
 
 add_library(logutil
-    src/tokenize.cpp
+    src/tokenize.cpp
+    src/stats.cpp
+    src/timer.cpp
+)
