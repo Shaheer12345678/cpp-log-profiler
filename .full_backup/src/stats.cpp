@@ -8,4 +8,8 @@ void Histogram::add(long long latency_ms) {
     buckets[idx]++;
 }
 
-std::vector<std::pair<size_t,size_t>> Histogram::sorted() const {
+std::vector<std::pair<size_t,size_t>> Histogram::sorted() const {
+    std::vector<std::pair<size_t,size_t>> v(buckets.begin(), buckets.end());
+    std::sort(v.begin(), v.end(), [](auto& a, auto& b){ return a.first < b.first;});
+    return v;
+}

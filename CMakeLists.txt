@@ -8,4 +8,8 @@ add_library(logutil
     src/tokenize.cpp
     src/stats.cpp
     src/timer.cpp
-)
+)
+target_include_directories(logutil PUBLIC include)
+
+add_executable(logprof src/main.cpp)
+target_link_libraries(logprof PRIVATE logutil)

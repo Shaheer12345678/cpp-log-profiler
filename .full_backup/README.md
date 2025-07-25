@@ -9,4 +9,7 @@ Command-line tool to parse large log files and compute stats:
 ```bash
 cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j
-./build/logprof --help
+./build/logprof --help
+```
+## Run example
+```bash

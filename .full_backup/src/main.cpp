@@ -27,4 +27,14 @@ int main(int argc, char** argv) {
         {"top", required_argument, nullptr, 't'},
         {0,0,0,0}
     };
-
+
+    int idx, ch;
+    while ((ch = getopt_long(argc, argv, "", longopts, &idx)) != -1) {
+        switch (ch) {
+            case 'd': delim = optarg[0]; break;
+            case 'l': latency_col = stoi(optarg); break;
+            case 't': top = stoi(optarg); break;
+            default: usage(); return 1;
+        }
+    }
+    if (optind >= argc) { usage(); return 1; }
