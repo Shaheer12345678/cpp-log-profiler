@@ -12,4 +12,8 @@ add_library(logutil
 target_include_directories(logutil PUBLIC include)
 
 add_executable(logprof src/main.cpp)
-target_link_libraries(logprof PRIVATE logutil)
+target_link_libraries(logprof PRIVATE logutil)
+
+if(ENABLE_TESTS)
+  include(FetchContent)
+  FetchContent_Declare(googletest

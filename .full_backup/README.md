@@ -12,4 +12,8 @@ cmake --build build -j
 ./build/logprof --help
 ```
 ## Run example
-```bash
+```bash
+./build/logprof sample.log --top 5 --latency-col 3 --delimiter ','
+```
+
+## Tests

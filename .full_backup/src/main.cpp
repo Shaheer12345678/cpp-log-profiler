@@ -37,4 +37,14 @@ int main(int argc, char** argv) {
             default: usage(); return 1;
         }
     }
-    if (optind >= argc) { usage(); return 1; }
+    if (optind >= argc) { usage(); return 1; }
+    file = argv[optind];
+
+    ifstream fin(file);
+    if (!fin) { cerr << "Cannot open: " << file << "\n"; return 1; }
+
+    vector<string> errors;
+    Histogram hist; hist.bucket_size = 10;
+    string line;
+    size_t line_no = 0;
+

@@ -7,4 +7,6 @@ vector<string_view> split_sv(string_view s, char delim) {
     size_t start = 0;
     for (size_t i = 0; i < s.size(); ++i) {
         if (s[i] == delim) {
-            out.emplace_back(s.substr(start, i - start));
+            out.emplace_back(s.substr(start, i - start));
+            start = i + 1;
+        }
