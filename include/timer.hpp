@@ -10,4 +10,6 @@ public:
     ~ScopedTimer() {
         auto end = std::chrono::high_resolution_clock::now();
         cb_(std::chrono::duration_cast<std::chrono::microseconds>(end - start_));
-    }
+    }
+private:
+    std::function<void(std::chrono::microseconds)> cb_;

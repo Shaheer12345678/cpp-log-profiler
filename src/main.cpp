@@ -47,4 +47,14 @@ int main(int argc, char** argv) {
     Histogram hist; hist.bucket_size = 10;
     string line;
     size_t line_no = 0;
-
+
+    ScopedTimer timer([](auto us){
+        cerr << "[parse-time] " << us.count()/1000.0 << " ms\n";
+    });
+
+    while (getline(fin, line)) {
+        ++line_no;
+        auto cols = split_sv(line, delim);
+        if ((int)cols.size() > latency_col) {
+            try {
+                long long ms = stoll(string(cols[latency_col]));

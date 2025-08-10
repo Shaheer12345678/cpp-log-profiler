@@ -11,4 +11,6 @@ struct Histogram {
     size_t bucket_size{10};
     std::unordered_map<size_t, size_t> buckets;
     void add(long long latency_ms);
-    std::vector<std::pair<size_t,size_t>> sorted() const; // (bucket_index, count)
+    std::vector<std::pair<size_t,size_t>> sorted() const; // (bucket_index, count)
+};
+

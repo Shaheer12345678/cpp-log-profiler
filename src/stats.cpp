@@ -16,4 +16,7 @@ std::vector<std::pair<size_t,size_t>> Histogram::sorted() const {
 
 std::vector<std::pair<std::string,size_t>> top_k(const std::vector<std::string>& items, size_t k) {
     std::unordered_map<std::string,size_t> freq;
-    for (auto& s : items) freq[s]++;
+    for (auto& s : items) freq[s]++;
+    std::vector<std::pair<std::string,size_t>> v(freq.begin(), freq.end());
+    std::partial_sort(v.begin(), v.begin() + std::min(k, v.size()), v.end(),
+        [](auto& a, auto& b){ return a.second > b.second; });

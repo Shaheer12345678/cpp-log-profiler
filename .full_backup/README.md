@@ -16,4 +16,8 @@ cmake --build build -j
 ./build/logprof sample.log --top 5 --latency-col 3 --delimiter ','
 ```
 
-## Tests
+## Tests
+```bash
+cmake -S . -B build -DENABLE_TESTS=ON
+cmake --build build -j
+ctest --test-dir build --output-on-failure
