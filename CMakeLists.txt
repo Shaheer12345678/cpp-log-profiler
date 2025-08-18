@@ -19,4 +19,8 @@ if(ENABLE_TESTS)
   FetchContent_Declare(googletest
     URL https://github.com/google/googletest/archive/refs/tags/v1.14.0.zip
   )
-  FetchContent_MakeAvailable(googletest)
+  FetchContent_MakeAvailable(googletest)
+  enable_testing()
+  add_executable(tokenize_test tests/tokenize_test.cpp)
+  target_link_libraries(tokenize_test PRIVATE logutil gtest_main)
+  add_test(NAME tokenize_test COMMAND tokenize_test)

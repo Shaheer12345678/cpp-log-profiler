@@ -12,4 +12,7 @@ public:
         cb_(std::chrono::duration_cast<std::chrono::microseconds>(end - start_));
     }
 private:
-    std::function<void(std::chrono::microseconds)> cb_;
+    std::function<void(std::chrono::microseconds)> cb_;
+    std::chrono::high_resolution_clock::time_point start_;
+};
+}

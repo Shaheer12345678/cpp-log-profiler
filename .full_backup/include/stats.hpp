@@ -13,4 +13,7 @@ struct Histogram {
     void add(long long latency_ms);
     std::vector<std::pair<size_t,size_t>> sorted() const; // (bucket_index, count)
 };
-
+
+std::vector<std::pair<std::string,size_t>> top_k(const std::vector<std::string>& items, size_t k);
+
+}

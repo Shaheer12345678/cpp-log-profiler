@@ -57,4 +57,14 @@ int main(int argc, char** argv) {
         auto cols = split_sv(line, delim);
         if ((int)cols.size() > latency_col) {
             try {
-                long long ms = stoll(string(cols[latency_col]));
+                long long ms = stoll(string(cols[latency_col]));
+                hist.add(ms);
+            } catch (...) {}
+        }
+        // naive: treat column 0 as level or message id for top-k (tweak as needed)
+        if (!cols.empty()) errors.push_back(string(cols[0]));
+    }
+
+    cout << "== Top " << top << " entries ==\n";
+    for (auto& [msg, cnt] : top_k(errors, top)) {
+        cout << cnt << "  " << msg << "\n";

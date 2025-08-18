@@ -19,4 +19,8 @@ std::vector<std::pair<std::string,size_t>> top_k(const std::vector<std::string>&
     for (auto& s : items) freq[s]++;
     std::vector<std::pair<std::string,size_t>> v(freq.begin(), freq.end());
     std::partial_sort(v.begin(), v.begin() + std::min(k, v.size()), v.end(),
-        [](auto& a, auto& b){ return a.second > b.second; });
+        [](auto& a, auto& b){ return a.second > b.second; });
+    if (v.size() > k) v.resize(k);
+    return v;
+}
+

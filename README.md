@@ -20,4 +20,8 @@ cmake --build build -j
 ```bash
 cmake -S . -B build -DENABLE_TESTS=ON
 cmake --build build -j
-ctest --test-dir build --output-on-failure
+ctest --test-dir build --output-on-failure
+```
+
+## Notes
+- Uses `std::string_view` for zero-copy tokenization.
