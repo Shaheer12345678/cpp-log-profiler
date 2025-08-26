@@ -67,4 +67,13 @@ int main(int argc, char** argv) {
 
     cout << "== Top " << top << " entries ==\n";
     for (auto& [msg, cnt] : top_k(errors, top)) {
-        cout << cnt << "  " << msg << "\n";
+        cout << cnt << "  " << msg << "\n";
+    }
+    cout << "\n== Latency histogram (bucket=" << hist.bucket_size << " ms) ==\n";
+    for (auto& [bucket, cnt] : hist.sorted()) {
+        cout << "[" << bucket*hist.bucket_size << "," << (bucket+1)*hist.bucket_size-1 << "]: " << cnt << "\n";
+    }
+    return 0;
+}
+
+

@@ -23,4 +23,7 @@ if(ENABLE_TESTS)
   enable_testing()
   add_executable(tokenize_test tests/tokenize_test.cpp)
   target_link_libraries(tokenize_test PRIVATE logutil gtest_main)
-  add_test(NAME tokenize_test COMMAND tokenize_test)
+  add_test(NAME tokenize_test COMMAND tokenize_test)
+endif()
+
+

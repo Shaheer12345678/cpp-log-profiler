@@ -24,4 +24,7 @@ ctest --test-dir build --output-on-failure
 ```
 
 ## Notes
-- Uses `std::string_view` for zero-copy tokenization.
+- Uses `std::string_view` for zero-copy tokenization.
+- Accepts CSV-like logs; adjust `--latency-col` to your column (0-based).
+
+
