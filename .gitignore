@@ -1,0 +1,15 @@
+# CMake build directory
+build/
+
+# Object files and binaries
+*.o
+*.obj
+*.exe
+*.out
+
+# Logs
+*.log
+
+# Editor / IDE settings
+.vscode/
+.idea/
